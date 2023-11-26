@@ -1,3 +1,5 @@
+#/etc/named/zones/db.qtroom.ir
+
 $TTL    604800
 @       IN      SOA     okd4-services.qtroom.ir. admin.qtroom.ir. (
                   1     ; Serial
@@ -35,4 +37,3 @@ oauth-openshift.apps.lab.qtroom.ir.     IN     A     192.168.1.210
 _etcd-server-ssl._tcp.lab.qtroom.ir.    86400     IN    SRV     0    10    2380    etcd-0.lab
 _etcd-server-ssl._tcp.lab.qtroom.ir.    86400     IN    SRV     0    10    2380    etcd-1.lab
 _etcd-server-ssl._tcp.lab.qtroom.ir.    86400     IN    SRV     0    10    2380    etcd-2.lab
-
