@@ -26,5 +26,5 @@ platform:
 
 fips: false
 
-pullSecret: '{"auths":{"
-sshKey: 'ssh-rsa AAAA'   
+pullSecret: '{"auths"
+sshKey: 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAIiShK98JDdH8gPH8ZzXZ49ycz+uap+t515DvKFzMpf adak@okd4-services'
