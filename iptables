@@ -9,10 +9,28 @@
 -A INPUT -p tcp -m tcp --dport 6443 -j ACCEPT
 -A INPUT -p udp -m udp --dport 53 -j ACCEPT
 -A INPUT -p tcp -m tcp --dport 3389 -j ACCEPT
+-A INPUT -p tcp --dport 111 -j ACCEPT
+-A INPUT -p tcp --sport 2049 -j ACCEPT
+-A INPUT -p tcp --dport 4046 -j ACCEPT
+-A INPUT -p udp -m udp --dport 4045 -j ACCEPT
+-A INPUT -p tcp -m tcp --dport 4045 -j ACCEPT
+-A INPUT -p udp -m udp --dport 2049 -j ACCEPT
+-A INPUT -p udp -m udp --dport 111 -j ACCEPT
+-A INPUT -p udp -m udp --dport 1110 -j ACCEPT
+-A INPUT -p tcp -m tcp --dport 1110 -j ACCEPT
 -A OUTPUT -p tcp -m tcp --sport 8080 -j ACCEPT
 -A OUTPUT -p tcp -m tcp --sport 22623 -j ACCEPT
 -A OUTPUT -p tcp -m tcp --sport 6443 -j ACCEPT
 -A OUTPUT -p udp -m udp --sport 53 -j ACCEPT
 -A OUTPUT -p tcp -m tcp --sport 3389 -j ACCEPT
+-A OUTPUT -p tcp --dport 111 -j ACCEPT
+-A OUTPUT -p tcp --dport 2049 -j ACCEPT
+-A OUTPUT -p tcp --dport 4045:4047 -j ACCEPT
+-A OUTPUT -p udp -m udp --sport 4045 -j ACCEPT
+-A OUTPUT -p tcp -m tcp --sport 4045 -j ACCEPT
+-A OUTPUT -p udp -m udp --sport 2049 -j ACCEPT
+-A OUTPUT -p udp -m udp --sport 111 -j ACCEPT
+-A OUTPUT -p udp -m udp --sport 1110 -j ACCEPT
+-A OUTPUT -p tcp -m tcp --sport 1110 -j ACCEPT
 COMMIT
 # Completed on Sat Nov 25 12:11:43 2023
