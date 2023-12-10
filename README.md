@@ -279,38 +279,15 @@ Cluster consists of:
 
 | Machine | OS | IP + MAC Address | Resources |
 | --- | --- | --- | --- |
-| <span style="color: rgb(229, 229, 229)">okd4-services (DNS/LB/WEB/NFS) \[Helper Node\]</span> | <span style="color: rgb(163, 163, 163)">Fedora Workstation 39</span> | LAN: 00:0c:29:8a:0b:32 | CPU: 8 - Memory: 8 - HDD: 140 GB - Network: OKD(LAN) + VM(WAN) |
-| <span style="color: rgb(229, 229, 229)">okd4-bootstrap (BootStrap Node)</span> | ISO: fedora-coreos-39.20231101.3.0-live.x86_64.iso
+| <span style="color: rgb(229, 229, 229)">okd4-services (DNS/LB/WEB/NFS) \[Helper Node\]</span> | <span style="color: rgb(163, 163, 163)">Fedora Workstation 39</span> | eth1: LAN: 00:0c:29:8a:0b:32 - LAN: 192.168.1.210 / eth2: WAN: <span style="color: rgb(163, 163, 163)">00:0c:29:8a:0b:28 - WAN: 192.168.2.60</span> | CPU: 8 - Memory: 8 - HDD: 140 GB - Network: OKD(LAN) + VM(WAN) |
+| <span style="color: rgb(229, 229, 229)">okd4-bootstrap (BootStrap Node)</span> | <span style="color: rgb(163, 163, 163)">ISO: fedora-coreos-39.20231101.3.0-live.x86_64.iso - RAW: fedora-coreos-39.20231101.3.0-metal.x86_64.raw.xz</span> | 00:0c:29:2a:73:13 - 192.168.1.200 | CPU: 8 - Memory: 18 - HDD: 140 GB - Network: OKD |
+| <span style="color: rgb(229, 229, 229)">okd4-pfsense (FireWall - Router - DHCP)</span> | <span style="color: rgb(163, 163, 163)">FreeBSD</span> | eth1: LAN: <span style="color: rgb(163, 163, 163)">00:0c:29:2c:d5:43 - </span>LAN: 192.168.1.1 / eth2: WAN: <span style="color: rgb(163, 163, 163)">00:0c:29:2c:d5:39 - </span>WAN: 192.168.2.135 | CPU: 2 - Memory: 4 - HDD: 25 GB - Network: OKD(LAN) + VM(WAN) |
+| <span style="color: rgb(229, 229, 229)">okd4-control-plane-1</span> | <span style="color: rgb(163, 163, 163)">ISO: fedora-coreos-39.20231101.3.0-live.x86_64.iso - RAW: fedora-coreos-39.20231101.3.0-metal.x86_64.raw.xz</span> | 00:0c:29:9a:77:53 - 192.168.1.201 | CPU: 8 - Memory: 18 - HDD: 140 GB - Network: OKD |
+| <span style="color: rgb(229, 229, 229)">okd4-control-plane-2</span> | <span style="color: rgb(163, 163, 163)">ISO: fedora-coreos-39.20231101.3.0-live.x86_64.iso - RAW: fedora-coreos-39.20231101.3.0-metal.x86_64.raw.xz</span> | 00:0c:29:53:5d:97 - 192.168.1.202 | CPU: 8 - Memory: 18 - HDD: 140 GB - Network: OKD |
+| <span style="color: rgb(229, 229, 229)">okd4-control-plane-3</span> | <span style="color: rgb(163, 163, 163)">ISO: fedora-coreos-39.20231101.3.0-live.x86_64.iso - RAW: fedora-coreos-39.20231101.3.0-metal.x86_64.raw.xz</span> | 00:0c:29:89:be:d5 - 192.168.1.203 | CPU: 8 - Memory: 18 - HDD: 140 GB - Network: OKD |
+| <span style="color: rgb(229, 229, 229)">okd4-compute-1</span> | <span style="color: rgb(163, 163, 163)">ISO: fedora-coreos-39.20231101.3.0-live.x86_64.iso - RAW: fedora-coreos-39.20231101.3.0-metal.x86_64.raw.xz</span> | 00:0c:29:39:19:c1 - 192.168.1.204 | CPU: 8 - Memory: 18 - HDD: 140 GB - Network: OKD |
+| <span style="color: rgb(229, 229, 229)">okd4-compute-2</span> | ISO: fedora-coreos-39.20231101.3.0-live.x86_64.iso - RAW: fedora-coreos-39.20231101.3.0-metal.x86_64.raw.xz | 00:0c:29:54:8c:a7 - 192.168.1.205 | CPU: 8 - Memory: 18 - HDD: 140 GB - Network: OKD |
 
-RAW: fedora-coreos-39.20231101.3.0-metal.x86_64.raw.xz
-
- | 00:0c:29:2a:73:13 | CPU: 8 - Memory: 18 - HDD: 140 GB - Network: OKD |
-| <span style="color: rgb(229, 229, 229)">okd4-pfsense (FireWall - Router - DHCP)</span> | <span style="color: rgb(163, 163, 163)">FreeBSD</span> | LAN: <span style="color: rgb(163, 163, 163)">00:0c:29:2c:d5:43</span> | CPU: 2 - Memory: 4 - HDD: 25 GB - Network: OKD(LAN) + VM(WAN) |
-| <span style="color: rgb(229, 229, 229)">okd4-control-plane-1</span> | ISO: fedora-coreos-39.20231101.3.0-live.x86_64.iso
-
-RAW: fedora-coreos-39.20231101.3.0-metal.x86_64.raw.xz
-
- | 00:0c:29:9a:77:53 | CPU: 8 - Memory: 18 - HDD: 140 GB - Network: OKD |
-| <span style="color: rgb(229, 229, 229)">okd4-control-plane-2</span> | ISO: fedora-coreos-39.20231101.3.0-live.x86_64.iso
-
-RAW: fedora-coreos-39.20231101.3.0-metal.x86_64.raw.xz
-
- | 00:0c:29:53:5d:97 | CPU: 8 - Memory: 18 - HDD: 140 GB - Network: OKD |
-| <span style="color: rgb(229, 229, 229)">okd4-control-plane-3</span> | ISO: fedora-coreos-39.20231101.3.0-live.x86_64.iso
-
-RAW: fedora-coreos-39.20231101.3.0-metal.x86_64.raw.xz
-
- | 00:0c:29:89:be:d5 | CPU: 8 - Memory: 18 - HDD: 140 GB - Network: OKD |
-| <span style="color: rgb(229, 229, 229)">okd4-compute-1</span> | ISO: fedora-coreos-39.20231101.3.0-live.x86_64.iso
-
-RAW: fedora-coreos-39.20231101.3.0-metal.x86_64.raw.xz
-
- | 00:0c:29:39:19:c1 | CPU: 8 - Memory: 18 - HDD: 140 GB - Network: OKD |
-| <span style="color: rgb(229, 229, 229)">okd4-compute-2</span> | ISO: fedora-coreos-39.20231101.3.0-live.x86_64.iso
-
-RAW: fedora-coreos-39.20231101.3.0-metal.x86_64.raw.xz
-
- | 00:0c:29:54:8c:a7 | CPU: 8 - Memory: 18 - HDD: 140 GB - Network: OKD |
 
 
 ## Cluster
