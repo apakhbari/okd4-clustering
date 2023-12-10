@@ -231,6 +231,9 @@ Some Good Resources
 
 <https://coreos.github.io/zincati/usage/updates-strategy/>
 
+
+## OpenShift Components
+
 - $ oc api-resources —&gt; show a list of all resources and the specific API collection they are coming from. if its version is 1 or v1 it is coming from k8s if not it is added by OpenShift
 
 - $ oc explain \[name of resource\] —&gt; get more information about API resource
