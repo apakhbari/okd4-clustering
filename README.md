@@ -265,6 +265,8 @@ Some Good Resources
 
 - Operator hub only showing community-operators --&gt; In Cluster's OperatorHub, changed disabled default sources to false
 
+- oc scale deploy &lt;deployment_name&gt; -n &lt;namespace&gt; --replicas &lt;number_of_replicas&gt; --&gt; change number of replicas
+
 - Gracefully shutdown ckuster: <https://docs.openshift.com/container-platform/4.8/backup_and_restore/graceful-cluster-shutdown.html>
 
 ---
