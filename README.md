@@ -356,6 +356,7 @@ packages that are installed on it:
 - httpd
 - jq 1.7
 - nfs-utils + rpcbind
+- Freedom of developer : <https://github.com/freedomofdevelopers/fod>
 
 firewall:
 
