@@ -1,0 +1,9 @@
+################################################
+adak - @dakpro123 - (Role: cluster-admin)
+
+Log in with this token:
+oc login --token=sha256~P40VWGZa9jHUZlf2IjzVBig--SbcKKkOWedkuA0wwMs --server=https://api.lab.qtroom.ir:6443
+
+Use this token directly against the API
+curl -H "Authorization: Bearer sha256~P40VWGZa9jHUZlf2IjzVBig--SbcKKkOWedkuA0wwMs" "https://api.lab.qtroom.ir:6443/apis/user.openshift.io/v1/users/~"
+################################################
