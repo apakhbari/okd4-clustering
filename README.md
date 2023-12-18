@@ -357,6 +357,8 @@ packages that are installed on it:
 - jq 1.7
 - nfs-utils + rpcbind
 - Freedom of developer : <https://github.com/freedomofdevelopers/fod>
+- OC CLI
+- Tekton CLI
 
 firewall:
 
