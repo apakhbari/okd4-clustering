@@ -336,6 +336,30 @@ Additional helm repos:
 
 - redhat-cop
 - bitnami-helm-reopo
+- 
+
+**Using OpenShift’s Internal Registry:**
+
+Accessing the OpenShift 4.x Internal Registry via an OpenShift “Route” : 
+
+```
+$ oc get route -n openshift-image-registry
+```
+The output should be of the form:
+```
+NAME            HOST/PORT
+default-route   default-route-openshift-image-registry.apps-crc.testing
+```
+If the route is not exposed, the following command can be run:
+
+```
+$ oc patch configs.imageregistry.operator.openshift.io/cluster --patch '{"spec":{"defaultRoute":true}}' --type=merge
+```
+
+We will dynamically create an environment variable with the name of route to the OpenShift registry for use in the remainder of this article. The route will have “/openshift” appended as this is a project that all users can access:
+```
+$ REGISTRY="$(oc get route/default-route -n openshift-image-registry -o=jsonpath='{.spec.host}')/openshift"
+```
 
 ## okd4-services
 
