@@ -557,6 +557,7 @@ Section3: References
 ---
 
 Installing a cluster on vSphere with user-provisioned infrastructure - OpenShift Documebtation: <https://docs.openshift.com/container-platform/4.8/installing/installing_vsphere/installing-vsphere.html>
+---
 
 \
 <span style="color: rgb(201, 209, 217)">Install OpenShift 4 on Bare Metal - UPI - GitHub: </span><https://github.com/ryanhay/ocp4-metal-install>
