@@ -3,7 +3,7 @@
    ____  _  _______  _  _           _____ _           _            _             
   / __ \| |/ /  __ \| || |         / ____| |         | |          (_)            
  | |  | | ' /| |  | | || |_ ______| |    | |_   _ ___| |_ ___ _ __ _ _ __   __ _ 
- | |  | |  < | |  | |__   _|______| |    | | | | / __| __/ _ \ '__| | '_ \ / _` |
+ | |  | |   | |  | |__   _|______| |    | | | | / __| __/ _ \ '__| | '_ \ / _` |
  | |__| | . \| |__| |  | |        | |____| | |_| \__ \ ||  __/ |  | | | | | (_| |
   \____/|_|\_\_____/   |_|         \_____|_|\__,_|___/\__\___|_|  |_|_| |_|\__, |
                                                                             __/ |
@@ -175,7 +175,7 @@ Each cluster machine must meet the following minimum requirements:
 | Control plane | RHCOS | 4 | 16 GB | 120 GB |
 | Compute | RHCOS or RHEL 7.6 | 2 | 8 GB | 120 GB |
 
-Refrence of table: <https://docs.openshift.com/container-platform/4.2/installing/installing_vsphere/installing-vsphere.html?extIdCarryOver=true&sc_cid=701f2000001Css5AAC#minimum-resource-requirements_installing-vsphere>
+Refrence of table: https://docs.openshift.com/container-platform/4.2/installing/installing_vsphere/installing-vsphere.html?extIdCarryOver=true&sc_cid=701f2000001Css5AAC#minimum-resource-requirements_installing-vsphere>
 
 ## **Producing an Ignition Config**
 
@@ -202,7 +202,7 @@ $ butane --pretty --strict config.yaml > config.ign
 
 ### Networking
 
-<https://docs.fedoraproject.org/en-US/fedora-coreos/sysconfig-network-configuration/>
+https://docs.fedoraproject.org/en-US/fedora-coreos/sysconfig-network-configuration/>
 
 🟥 IMPORTANT: Do not forget to add --copy-network argument 🟥
 
@@ -236,11 +236,11 @@ storage:
 
 Some Good Resources
 
-<https://www.youtube.com/watch?v=2eEiVYelFTo&t=128s>
+https://www.youtube.com/watch?v=2eEiVYelFTo&t=128s>
 
-<https://docs.fedoraproject.org/en-US/fedora-coreos/producing-ign/>
+https://docs.fedoraproject.org/en-US/fedora-coreos/producing-ign/>
 
-<https://coreos.github.io/zincati/usage/updates-strategy/>
+https://coreos.github.io/zincati/usage/updates-strategy/>
 
 
 ## Commands
@@ -279,7 +279,7 @@ Some Good Resources
 
 ## Cases
 - Operator hub only showing community-operators --&gt; In Cluster's OperatorHub, changed disabled default sources to false
-- Gracefully shutdown ckuster: <https://docs.openshift.com/container-platform/4.8/backup_and_restore/graceful-cluster-shutdown.html>
+- Gracefully shutdown ckuster: https://docs.openshift.com/container-platform/4.8/backup_and_restore/graceful-cluster-shutdown.html>
 
 ---
 
@@ -293,14 +293,14 @@ Cluster consists of:
 
 | Machine | OS | IP + MAC Address | Resources |
 | --- | --- | --- | --- |
-| <span style="color: rgb(229, 229, 229)">okd4-services (DNS/LB/WEB/NFS) \[Helper Node\]</span> | <span style="color: rgb(163, 163, 163)">Fedora Workstation 39</span> | eth1: LAN: 00:0c:29:8a:0b:32 - LAN: 192.168.1.210 / eth2: WAN: <span style="color: rgb(163, 163, 163)">00:0c:29:8a:0b:28 - WAN: 192.168.2.60</span> | CPU: 8 - Memory: 8 - HDD: 140 GB - Network: OKD(LAN) + VM(WAN) |
-| <span style="color: rgb(229, 229, 229)">okd4-bootstrap (BootStrap Node)</span> | <span style="color: rgb(163, 163, 163)">ISO: fedora-coreos-39.20231101.3.0-live.x86_64.iso - RAW: fedora-coreos-39.20231101.3.0-metal.x86_64.raw.xz</span> | 00:0c:29:2a:73:13 - 192.168.1.200 | CPU: 8 - Memory: 18 - HDD: 140 GB - Network: OKD |
-| <span style="color: rgb(229, 229, 229)">okd4-pfsense (FireWall - Router - DHCP)</span> | <span style="color: rgb(163, 163, 163)">FreeBSD</span> | eth1: LAN: <span style="color: rgb(163, 163, 163)">00:0c:29:2c:d5:43 - </span>LAN: 192.168.1.1 / eth2: WAN: <span style="color: rgb(163, 163, 163)">00:0c:29:2c:d5:39 - </span>WAN: 192.168.2.135 | CPU: 2 - Memory: 4 - HDD: 25 GB - Network: OKD(LAN) + VM(WAN) |
-| <span style="color: rgb(229, 229, 229)">okd4-control-plane-1</span> | <span style="color: rgb(163, 163, 163)">ISO: fedora-coreos-39.20231101.3.0-live.x86_64.iso - RAW: fedora-coreos-39.20231101.3.0-metal.x86_64.raw.xz</span> | 00:0c:29:9a:77:53 - 192.168.1.201 | CPU: 8 - Memory: 18 - HDD: 140 GB - Network: OKD |
-| <span style="color: rgb(229, 229, 229)">okd4-control-plane-2</span> | <span style="color: rgb(163, 163, 163)">ISO: fedora-coreos-39.20231101.3.0-live.x86_64.iso - RAW: fedora-coreos-39.20231101.3.0-metal.x86_64.raw.xz</span> | 00:0c:29:53:5d:97 - 192.168.1.202 | CPU: 8 - Memory: 18 - HDD: 140 GB - Network: OKD |
-| <span style="color: rgb(229, 229, 229)">okd4-control-plane-3</span> | <span style="color: rgb(163, 163, 163)">ISO: fedora-coreos-39.20231101.3.0-live.x86_64.iso - RAW: fedora-coreos-39.20231101.3.0-metal.x86_64.raw.xz</span> | 00:0c:29:89:be:d5 - 192.168.1.203 | CPU: 8 - Memory: 18 - HDD: 140 GB - Network: OKD |
-| <span style="color: rgb(229, 229, 229)">okd4-compute-1</span> | <span style="color: rgb(163, 163, 163)">ISO: fedora-coreos-39.20231101.3.0-live.x86_64.iso - RAW: fedora-coreos-39.20231101.3.0-metal.x86_64.raw.xz</span> | 00:0c:29:39:19:c1 - 192.168.1.204 | CPU: 8 - Memory: 18 - HDD: 140 GB - Network: OKD |
-| <span style="color: rgb(229, 229, 229)">okd4-compute-2</span> | ISO: fedora-coreos-39.20231101.3.0-live.x86_64.iso - RAW: fedora-coreos-39.20231101.3.0-metal.x86_64.raw.xz | 00:0c:29:54:8c:a7 - 192.168.1.205 | CPU: 8 - Memory: 18 - HDD: 140 GB - Network: OKD |
+| okd4-services (DNS/LB/WEB/NFS) \[Helper Node\] | Fedora Workstation 39 | eth1: LAN: 00:0c:29:8a:0b:32 - LAN: 192.168.1.210 / eth2: WAN: 00:0c:29:8a:0b:28 - WAN: 192.168.2.60 | CPU: 8 - Memory: 8 - HDD: 140 GB - Network: OKD(LAN) + VM(WAN) |
+| okd4-bootstrap (BootStrap Node) | ISO: fedora-coreos-39.20231101.3.0-live.x86_64.iso - RAW: fedora-coreos-39.20231101.3.0-metal.x86_64.raw.xz | 00:0c:29:2a:73:13 - 192.168.1.200 | CPU: 8 - Memory: 18 - HDD: 140 GB - Network: OKD |
+| okd4-pfsense (FireWall - Router - DHCP) | FreeBSD | eth1: LAN: 00:0c:29:2c:d5:43 - LAN: 192.168.1.1 / eth2: WAN: 00:0c:29:2c:d5:39 - WAN: 192.168.2.135 | CPU: 2 - Memory: 4 - HDD: 25 GB - Network: OKD(LAN) + VM(WAN) |
+| okd4-control-plane-1 | ISO: fedora-coreos-39.20231101.3.0-live.x86_64.iso - RAW: fedora-coreos-39.20231101.3.0-metal.x86_64.raw.xz | 00:0c:29:9a:77:53 - 192.168.1.201 | CPU: 8 - Memory: 18 - HDD: 140 GB - Network: OKD |
+| okd4-control-plane-2 | ISO: fedora-coreos-39.20231101.3.0-live.x86_64.iso - RAW: fedora-coreos-39.20231101.3.0-metal.x86_64.raw.xz | 00:0c:29:53:5d:97 - 192.168.1.202 | CPU: 8 - Memory: 18 - HDD: 140 GB - Network: OKD |
+| okd4-control-plane-3 | ISO: fedora-coreos-39.20231101.3.0-live.x86_64.iso - RAW: fedora-coreos-39.20231101.3.0-metal.x86_64.raw.xz | 00:0c:29:89:be:d5 - 192.168.1.203 | CPU: 8 - Memory: 18 - HDD: 140 GB - Network: OKD |
+| okd4-compute-1 | ISO: fedora-coreos-39.20231101.3.0-live.x86_64.iso - RAW: fedora-coreos-39.20231101.3.0-metal.x86_64.raw.xz | 00:0c:29:39:19:c1 - 192.168.1.204 | CPU: 8 - Memory: 18 - HDD: 140 GB - Network: OKD |
+| okd4-compute-2 | ISO: fedora-coreos-39.20231101.3.0-live.x86_64.iso - RAW: fedora-coreos-39.20231101.3.0-metal.x86_64.raw.xz | 00:0c:29:54:8c:a7 - 192.168.1.205 | CPU: 8 - Memory: 18 - HDD: 140 GB - Network: OKD |
 
 
 
@@ -339,7 +339,7 @@ StorageClass:
 
 - Default StorageClass : nfs-client
 
-**Used this two resources:** <https://www.youtube.com/watch?v=6DmEp0kXUOI> **+ NFS Subdir External Provisioner:** <https://github.com/kubernetes-sigs/nfs-subdir-external-provisioner>
+**Used this two resources:** https://www.youtube.com/watch?v=6DmEp0kXUOI> **+ NFS Subdir External Provisioner:** https://github.com/kubernetes-sigs/nfs-subdir-external-provisioner>
 
 IMPORTANT: When we delete a PV, it will not remain on nfs server
 
@@ -391,7 +391,7 @@ packages that are installed on it:
 - httpd
 - jq 1.7
 - nfs-utils + rpcbind
-- Freedom of developer : <https://github.com/freedomofdevelopers/fod>
+- Freedom of developer : https://github.com/freedomofdevelopers/fod>
 - OC CLI
 - Tekton CLI
 
@@ -573,23 +573,23 @@ Section3: References
 APA 🖖🏻
 
 ## Links
-Installing a cluster on vSphere with user-provisioned infrastructure - OpenShift Documebtation: <https://docs.openshift.com/container-platform/4.8/installing/installing_vsphere/installing-vsphere.html>
+Installing a cluster on vSphere with user-provisioned infrastructure - OpenShift Documebtation: https://docs.openshift.com/container-platform/4.8/installing/installing_vsphere/installing-vsphere.html>
 ---
 
 \
-<span style="color: rgb(201, 209, 217)">Install OpenShift 4 on Bare Metal - UPI - GitHub: </span><https://github.com/ryanhay/ocp4-metal-install>
+span style="color: rgb(201, 209, 217)">Install OpenShift 4 on Bare Metal - UPI - GitHub: https://github.com/ryanhay/ocp4-metal-install>
 
-Guide: Installing an OKD 4.5 Cluster - Medium: <https://medium.com/@craig_robinson/guide-installing-an-okd-4-5-cluster-508a2631cbee>
+Guide: Installing an OKD 4.5 Cluster - Medium: https://medium.com/@craig_robinson/guide-installing-an-okd-4-5-cluster-508a2631cbee>
 
 Guide: Installing an OKD 4.5 Cluster - Medium: [Guide: OKD 4.5 Single Node Cluster | by Craig Robinson | The Startup | Medium](https://medium.com/swlh/guide-okd-4-5-single-node-cluster-832693cb752b)
 
 ---
 
-OC monitoring: <https://docs.openshift.com/container-platform/4.9/monitoring/monitoring-overview.html>
+OC monitoring: https://docs.openshift.com/container-platform/4.9/monitoring/monitoring-overview.html>
 
 ---
 
-<https://cloud.redhat.com/blog/provisioning-devops-on-openshift-using-helm-in-5-steps-from-zero-to-hero>
+https://cloud.redhat.com/blog/provisioning-devops-on-openshift-using-helm-in-5-steps-from-zero-to-hero>
 
 
 ```                                                                                                       
