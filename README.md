@@ -281,6 +281,12 @@ https://coreos.github.io/zincati/usage/updates-strategy/>
 - Operator hub only showing community-operators --&gt; In Cluster's OperatorHub, changed disabled default sources to false
 - Gracefully shutdown ckuster: https://docs.openshift.com/container-platform/4.8/backup_and_restore/graceful-cluster-shutdown.html>
 
+### Powering Up
+okd4-pfsense --> okd4-services --> okd4-control-plane --> okd4-compute
+
+### Powering Off
+okd4-compute --> okd4-control-plane --> okd4-services --> okd4-pfsense
+
 ---
 
 ## Section2: Implementation
