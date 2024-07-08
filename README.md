@@ -33,11 +33,7 @@
   - okd4-compute
 - Section4: References
 
----
-
 # Section1: Theoretical
-
----
 
 ## Tips & Tricks
 
@@ -52,7 +48,6 @@
 - CoreOS encourages you to use all services In a containerized environment.
 - Fedora CoreOS has some problems with SELinux updates, so if you make a change in SELinux policies ostree will stop updating policies with each Fedora version update --&gt; workaround: set temporary SELinux booleans on every boot instead of making it persistnet.
 
----
 
 - its best practice to have a project for each application
 - when running apps in OpenShift, logs of apps are being written in etcd database with json format
@@ -287,11 +282,10 @@ okd4-pfsense --> okd4-services --> okd4-control-plane --> okd4-compute
 ### Powering Off
 okd4-compute --> okd4-control-plane --> okd4-services --> okd4-pfsense
 
----
 
-## Section2: Implementation
 
----
+## Section2: Setup
+
 
 ## Schema
 
@@ -307,6 +301,11 @@ Cluster consists of:
 | okd4-control-plane-3 | ISO: fedora-coreos-39.20231101.3.0-live.x86_64.iso - RAW: fedora-coreos-39.20231101.3.0-metal.x86_64.raw.xz | 00:0c:29:89:be:d5 - 192.168.1.203 | CPU: 8 - Memory: 18 - HDD: 140 GB - Network: OKD |
 | okd4-compute-1 | ISO: fedora-coreos-39.20231101.3.0-live.x86_64.iso - RAW: fedora-coreos-39.20231101.3.0-metal.x86_64.raw.xz | 00:0c:29:39:19:c1 - 192.168.1.204 | CPU: 8 - Memory: 18 - HDD: 140 GB - Network: OKD |
 | okd4-compute-2 | ISO: fedora-coreos-39.20231101.3.0-live.x86_64.iso - RAW: fedora-coreos-39.20231101.3.0-metal.x86_64.raw.xz | 00:0c:29:54:8c:a7 - 192.168.1.205 | CPU: 8 - Memory: 18 - HDD: 140 GB - Network: OKD |
+
+
+
+
+## Section3: Implementation
 
 
 
@@ -569,9 +568,8 @@ port: 6443-22623 is used for haproxy
 
 port: 6443-22623 is used for haproxy
 
-Section3: References
+Section4: References
 
----
 
 # acknowledgment
 ## Contributors
