@@ -9,11 +9,9 @@
                                                                             __/ |
                                                                            |___/ 
 ```
----
 
-## Index:
+## Table of contents:
 
----
 
 - Section1: Theoretical
   - Tips & Tricks
