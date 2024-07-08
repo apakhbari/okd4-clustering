@@ -22,16 +22,16 @@
   - Producing an ignition config
   - Commands
   - Cases
+- Section2: Setup
 
-
-- Section2: Implementation
+- Section3: Implementation
   - Schema
   - Cluster
   - okd4-services
   - okd4-pfsense
   - okd4-control-plane
   - okd4-compute
-- Section3: References
+- Section4: References
 
 ---
 
