@@ -282,7 +282,7 @@ okd4-compute --> okd4-control-plane --> okd4-services --> okd4-pfsense
 
 
 
-## Section2: Setup
+# Section2: Setup
 
 
 ## Schema
@@ -303,7 +303,7 @@ Cluster consists of:
 
 
 
-## Section3: Implementation
+# Section3: Implementation
 
 
 
@@ -484,61 +484,6 @@ IPTables rules:
   \-A OUTPUT -p tcp -m tcp --sport 1110 -j ACCEPT
 
 SELinux: Permissive
-
-\
-$ sudo setsebool -P haproxy_connect_any 1
-
-$ sudo setsebool -P nfs_export_all_rw 1
-
-named (DNS):
-
-SSH
-
-ssh is enabeld
-
-RSA 3072:
-
-3072 SHA256:Z9hzOmcdMa6HrYfYFu0rvSvhCKLw4vGXm0jQR94yXg4 adak@okd4-services (RSA)
-
-SSH key Random Art:
-
-```
-+---[RSA 3072]----+
-|                 |
-|                 |
-|      .       o  |
-|   . o . o   . o |
-|  . . E S = ..o  |
-|  .. o.*.o +o=.. |
-|  .o...o..o==*+  |
-|  .+o.o.  o+Bo+  |
-| ...o.o.   ..+++ |
-+----[SHA256]-----+
-```
-
-Public Key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCqnlgiWgwZPrjj9pM7+6OGq3gUecTGIoryBDiriKHfbJHmG3pO7rFIogqqrumjsLkduTcP3kHFRQ3+biujiV+f8zdzaKiTf7IWtkIr4Ut4lOMC1WHANnZM2hIoCwROYikYVdCB/igKTCQSzkCDS/zGP6jmcuXm7tfC3WgH5pQ+Or8daTWXP09DyEAggmc2hKXEWPrxycAVSIWFx0VJTV7rBSBRNz1MXiwtvQzLolclpitEROuHnweQFrT0CIF5MxfDkLu369pCXW8be57jkW/RTsrDYMNYuaXuVncR8oWdPUm/awc/k5ptdvdjzCEZJH23Kka/Sll7bKiXxL8xMW9GehOWelXTb4ydzqFG+E/tRdvCJPz/mkP/EtlAdzWgFV8DqSvjLEpe28G/Qxe+A67Yf0/yiHUs1VjNdbfx+OX2K3yDREF9gpsKN86NRAdRDelsq0Rj4ZbRcya8FEEAZ549a1x9/AsEFYsF9RXrhEgKNYQZDyQwV2VTmgoS11aRdfk= adak@okd4-services
-
-ED25519:
-
-256 SHA256:f82G5Mf0eC+jY/41k++RDfarmpgcfgxcon1ClOmC7WY adak@okd4-services (ED25519)
-
-SSH key Random Art:
-
-```
-+--[ED25519 256]--+
-|          o      |
-|         +       |
-|      o o        |
-|     . o + .     |
-|      . S o . +  |
-|       E * + B =+|
-|      o  .* + B**|
-|        o +++oooB|
-|         =.=+=o=+|
-+----[SHA256]-----+
-```
-
-Public Key: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAIiShK98JDdH8gPH8ZzXZ49ycz+uap+t515DvKFzMpf adak@okd4-services
 
 NFS Export:
 
