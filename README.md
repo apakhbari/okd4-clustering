@@ -22,8 +22,6 @@
   - Cases
 - Section2: Setup
 
-- 
-
 - Section3: Implementation
   - Schema
   - Cluster
