@@ -313,34 +313,30 @@ Cluster consists of:
 
 - export enviormental variables to use bash: $ export KUBECONFIG=\~/install_dir/auth/kubeconfig
 
-Persistent Volume Claim (PVC):
+### Persistent Volume Claim (PVC):
 
 | NAMESPACE | NAME | STATUS | VOLUME | CAPACITY | ACCESS MODE | STORAGECLASS |
 | --- | --- | --- | --- | --- | --- | --- |
 | openshift-image-registry | image-registry-storage | Bound | registry-pv | 100Gi | RWX |  |
-|  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |
 
-Persistent Volume (PV):
+### Persistent Volume (PV):
 
 | NAME | CAPACITY | ACCESS MODE | RECLAIM POLICY | STATUS | CLAIM | STORAGECLASS | REASON |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | registry-pv | 100Gi | RWX | Retain | Bound | openshift-image-registry/image-registry-storage |  |  |
-|  |  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |  |
 
-Routes:
+### Routes:
 
 $ oc get routes --all-namespaces | grep -i console-openshift
 
 - console [console-openshift-console.apps.lab.qtroom.ir](http://console-openshift-console.apps.lab.qtroom.ir) console https reencrypt/Redirect None
 - downloads [downloads-openshift-console.apps.lab.qtroom.ir](http://downloads-openshift-console.apps.lab.qtroom.ir) downloads http edge/Redirect None
 
-NameSpaces:
+### NameSpaces:
 
 - NFS
 
-StorageClass:
+### StorageClass:
 
 - Default StorageClass : nfs-client
 
@@ -348,7 +344,7 @@ StorageClass:
 
 IMPORTANT: When we delete a PV, it will not remain on nfs server
 
-Additional helm repos:
+### Additional helm repos:
 
 - redhat-cop
 - bitnami-helm-reopo
