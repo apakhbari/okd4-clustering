@@ -19,7 +19,7 @@
   - Minimum resource requirements
   - Producing an ignition config
   - Commands
-  
+
 - Section2: Setting up an OKD 4.5 Cluster
 
 - Section3: Implementation
@@ -61,7 +61,7 @@
  
 ## OpenShift Components
 
-OpenShift Resources : (defined in OpenShift APIs & stored in etcd database):
+**OpenShift Resources** : (defined in OpenShift APIs & stored in etcd database):
 
 - pod : a running instance of an app, has IP, could have Volume
 - ReplicaSet (formerly ReplicationController) : the resource that takes care of running multiple instances of pods
@@ -69,7 +69,7 @@ OpenShift Resources : (defined in OpenShift APIs & stored in etcd database):
 - Service: used to load balance ingress traffic between the different Pod instances. (an API based Load Balancer)
 - Route (OpenShift specific): used to expose a URL that provides access to services
 
-APIs:
+**APIs**:
 
 - for scalability we have replica set + deployment
 
@@ -79,7 +79,7 @@ APIs:
 
 - for storage we have PV and storage can be dynamically created by storage class
 
-Labels
+**Labels**
 
 - automatically or manually applied to workloads in OpenShift, used as a selector
 
@@ -89,7 +89,7 @@ Labels
 
 - Admins can use labels to make filtering or scheduling Pods easier
 
-pod to service connection
+**pod to service connection**
 
 - services are using selector labels to find Pods they should connect to
 
@@ -111,7 +111,7 @@ pod to service connection
 
 - A persistent Volume Claim (PVC) is used to request access to storage, applications are configured to use a specific PVC by referring to their name. A PVC has an access mode, and a resource request, but does not connect to a specific type of PV, that leaves the decision of what to connect to the cluster, to better determine what to connect to, StorageClass can be used as a matching label between the PV and the PVC. after requesting access to the PV, the PVC will show as bound
 
-Template
+**Template**
 
 - when an app is defined, typically a set of related resources using the same parameters is created
 
@@ -149,7 +149,7 @@ Template
 
 - $ oc new-app —template=mariadb-ephemeral -p MYSQL_USER=anna -p MYSQL_PASSWORD=ann -p MYSQL_DATABASE=videos —as-deployment-config
 
-ImageStream
+**ImageStream**
 
 - when running container-based apps, images need to be pulled
 - These images are stored in the internal OpenShift image registry
