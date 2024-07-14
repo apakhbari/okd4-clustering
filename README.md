@@ -170,7 +170,7 @@ Each cluster machine must meet the following minimum requirements:
 | Control plane | RHCOS | 4 | 16 GB | 120 GB |
 | Compute | RHCOS or RHEL 7.6 | 2 | 8 GB | 120 GB |
 
-Refrence of table: https://docs.openshift.com/container-platform/4.2/installing/installing_vsphere/installing-vsphere.html?extIdCarryOver=true&sc_cid=701f2000001Css5AAC#minimum-resource-requirements_installing-vsphere
+- Refrence of table: https://docs.openshift.com/container-platform/4.2/installing/installing_vsphere/installing-vsphere.html?extIdCarryOver=true&sc_cid=701f2000001Css5AAC#minimum-resource-requirements_installing-vsphere
 
 ## **Producing an Ignition Config**
 
