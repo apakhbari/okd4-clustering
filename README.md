@@ -231,11 +231,11 @@ storage:
 
 Some Good Resources
 
-https://www.youtube.com/watch?v=2eEiVYelFTo&t=128s>
+https://www.youtube.com/watch?v=2eEiVYelFTo&t=128s
 
-https://docs.fedoraproject.org/en-US/fedora-coreos/producing-ign/>
+https://docs.fedoraproject.org/en-US/fedora-coreos/producing-ign/
 
-https://coreos.github.io/zincati/usage/updates-strategy/>
+https://coreos.github.io/zincati/usage/updates-strategy/
 
 
 ## Commands
