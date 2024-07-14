@@ -20,9 +20,7 @@
   - Producing an ignition config
   - Commands
   - Cases
-- Section2: Setup
-
-- 
+- Section2: Setting up an OKD 4.5 Cluster
 
 - Section3: Implementation
   - Schema
@@ -34,6 +32,8 @@
 - Section4: References
 
 # Section1: Theoretical
+
+- **OKD** is a distribution of Kubernetes optimized for continuous application development and multi-tenant deployment. OKD also serves as the upstream code base upon which Red Hat OpenShift Online and Red Hat OpenShift Container Platform are built.
 
 ## Tips & Tricks
 
@@ -284,7 +284,7 @@ okd4-compute --> okd4-control-plane --> okd4-services --> okd4-pfsense
 
 
 
-# Section2: Setup
+# Section2: Setting up an OKD 4.5 Cluster
 
 
 ## Schema
