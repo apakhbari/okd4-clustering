@@ -522,25 +522,16 @@ Section4: References
 APA 🖖🏻
 
 ## Links
-Installing a cluster on vSphere with user-provisioned infrastructure - OpenShift Documebtation: https://docs.openshift.com/container-platform/4.8/installing/installing_vsphere/installing-vsphere.html>
+- Installing a cluster on vSphere with user-provisioned infrastructure - OpenShift Documebtation: https://docs.openshift.com/container-platform/4.8/installing/installing_vsphere/installing-vsphere.html>
 ---
-
-\
-span style="color: rgb(201, 209, 217)">Install OpenShift 4 on Bare Metal - UPI - GitHub: https://github.com/ryanhay/ocp4-metal-install>
-
-Guide: Installing an OKD 4.5 Cluster - Medium: https://medium.com/@craig_robinson/guide-installing-an-okd-4-5-cluster-508a2631cbee>
-
-Guide: Installing an OKD 4.5 Cluster - Medium: [Guide: OKD 4.5 Single Node Cluster | by Craig Robinson | The Startup | Medium](https://medium.com/swlh/guide-okd-4-5-single-node-cluster-832693cb752b)
-
+- Install OpenShift 4 on Bare Metal - UPI - GitHub: https://github.com/ryanhay/ocp4-metal-install>
+- Guide: Installing an OKD 4.5 Cluster - Medium: https://medium.com/@craig_robinson/guide-installing-an-okd-4-5-cluster-508a2631cbee>
+- Guide: Installing an OKD 4.5 Cluster - Medium: [Guide: OKD 4.5 Single Node Cluster | by Craig Robinson | The Startup | Medium](https://medium.com/swlh/guide-okd-4-5-single-node-cluster-832693cb752b)
 ---
-
-OC monitoring: https://docs.openshift.com/container-platform/4.9/monitoring/monitoring-overview.html>
-
+- OC monitoring: https://docs.openshift.com/container-platform/4.9/monitoring/monitoring-overview.html>
 ---
-
-https://cloud.redhat.com/blog/provisioning-devops-on-openshift-using-helm-in-5-steps-from-zero-to-hero>
-
-
+- https://cloud.redhat.com/blog/provisioning-devops-on-openshift-using-helm-in-5-steps-from-zero-to-hero>
+---
 ```                                                                                                       
   aaaaaaaaaaaaa  ppppp   ppppppppp     aaaaaaaaaaaaa   
   a::::::::::::a p::::ppp:::::::::p    a::::::::::::a  
