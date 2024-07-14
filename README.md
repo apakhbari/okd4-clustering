@@ -32,11 +32,11 @@
   - Cases
 - Section4: References
 
-# Section1: Theoretical
+## Section1: Theoretical
 
 - **OKD** is a distribution of Kubernetes optimized for continuous application development and multi-tenant deployment. OKD also serves as the upstream code base upon which Red Hat OpenShift Online and Red Hat OpenShift Container Platform are built.
 
-## Tips & Tricks
+### Tips & Tricks
 
 - All Components are running in Containers, e.g: scheduler, apiserver
 - Core Features of OpenShift Cluster:
@@ -59,7 +59,7 @@
   - $ semanage fcontext -a -t container_file_t/hostfolder(/.\*)?
   - $ restorecon -R /hostfolder
  
-## OpenShift Components
+### OpenShift Components
 
 **OpenShift Resources** : (defined in OpenShift APIs & stored in etcd database):
 
@@ -173,14 +173,14 @@ Each cluster machine must meet the following minimum requirements:
 
 - Refrence of table: https://docs.openshift.com/container-platform/4.2/installing/installing_vsphere/installing-vsphere.html?extIdCarryOver=true&sc_cid=701f2000001Css5AAC#minimum-resource-requirements_installing-vsphere
 
-## **Producing an Ignition Config**
+### Producing an Ignition Config
 
-### **Ignition overview**
+#### Ignition overview
 
 - Ignition is a provisioning utility that reads a configuration file (in JSON format) and provisions a Fedora CoreOS system based on that configuration. Configurable components include storage and filesystems, systemd units, and users.
 - Ignition runs only once during the first boot of the system (while in the initramfs). Because Ignition runs so early in the boot process, it can re-partition disks, format filesystems, create users, and write files before the userspace begins to boot. As a result, systemd services are already written to disk when systemd starts, speeding the time to boot.
 
-### **Configuration process**
+#### Configuration process
 
 - Ignition configurations are formatted as JSON, which is quick and easy for a machine to read. However, these files are not easy for humans to read or write. The solution is a two-step configuration process that is friendly for both humans and machines:
 
@@ -196,7 +196,7 @@ Each cluster machine must meet the following minimum requirements:
 $ butane --pretty --strict config.yaml > config.ign
 ```
 
-### Networking
+#### Networking
 
 - https://docs.fedoraproject.org/en-US/fedora-coreos/sysconfig-network-configuration/
 
@@ -239,7 +239,7 @@ Some Good Resources
 - https://coreos.github.io/zincati/usage/updates-strategy/
 
 
-## Commands
+### Commands
 
 - $ oc api-resources —&gt; show a list of all resources and the specific API collection they are coming from. if its version is 1 or v1 it is coming from k8s if not it is added by OpenShift
 
@@ -274,10 +274,10 @@ Some Good Resources
 
 
 
-# Section2: Setting up an OKD 4.5 Cluster
+## Section2: Setting up an OKD 4.5 Cluster
 
 
-## Schema
+### Schema
 
 Cluster consists of:
 
@@ -295,38 +295,38 @@ Cluster consists of:
 - NOTE: In this guide, I used VMWare ESXi as the hypervisor
 
 
-# Section3: Implementation
+## Section3: Implementation
 
 
 
-## Cluster
+### Cluster
 
 - export enviormental variables to use bash: $ export KUBECONFIG=\~/install_dir/auth/kubeconfig
 
-### Persistent Volume Claim (PVC):
+#### Persistent Volume Claim (PVC):
 
 | NAMESPACE | NAME | STATUS | VOLUME | CAPACITY | ACCESS MODE | STORAGECLASS |
 | --- | --- | --- | --- | --- | --- | --- |
 | openshift-image-registry | image-registry-storage | Bound | registry-pv | 100Gi | RWX |  |
 
-### Persistent Volume (PV):
+#### Persistent Volume (PV):
 
 | NAME | CAPACITY | ACCESS MODE | RECLAIM POLICY | STATUS | CLAIM | STORAGECLASS | REASON |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | registry-pv | 100Gi | RWX | Retain | Bound | openshift-image-registry/image-registry-storage |  |  |
 
-### Routes:
+#### Routes:
 
 $ oc get routes --all-namespaces | grep -i console-openshift
 
 - console [console-openshift-console.apps.lab.qtroom.ir](http://console-openshift-console.apps.lab.qtroom.ir) console https reencrypt/Redirect None
 - downloads [downloads-openshift-console.apps.lab.qtroom.ir](http://downloads-openshift-console.apps.lab.qtroom.ir) downloads http edge/Redirect None
 
-### NameSpaces:
+#### NameSpaces:
 
 - NFS
 
-### StorageClass:
+#### StorageClass:
 
 - Default StorageClass : nfs-client
 
@@ -334,13 +334,13 @@ $ oc get routes --all-namespaces | grep -i console-openshift
 
 IMPORTANT: When we delete a PV, it will not remain on nfs server
 
-### Additional helm repos:
+#### Additional helm repos:
 
 - redhat-cop
 - bitnami-helm-reopo
 - 
 
-**Using OpenShift’s Internal Registry:**
+#### Using OpenShift’s Internal Registry:
 
 Accessing the OpenShift 4.x Internal Registry via an OpenShift “Route” : 
 
@@ -363,19 +363,13 @@ We will dynamically create an environment variable with the name of route to the
 $ REGISTRY="$(oc get route/default-route -n openshift-image-registry -o=jsonpath='{.spec.host}')/openshift"
 ```
 
-## okd4-services
+### okd4-services
 
 packages that are installed on it:
 
 - Google Chrome
-
-
 - VIM
-
-
 - GParted
-
-
 - XRDP - TigerVnc
 - named
 - haproxy
@@ -478,7 +472,7 @@ NFS Export:
 - /var/nfsshare 192.168.1.0/24(rw,sync,no_root_squash,no_all_squash,no_wdelay)
 - /var/nfs-storage-class 192.168.1.0/24(rw,sync,no_root_squash,no_all_squash,no_wdelay)
 
-## okd4-pfsense
+### okd4-pfsense
 
 Domain: qtroom.ir
 
@@ -491,34 +485,34 @@ ssh is enabeld
 
 Services &gt; WOL (Wake On LAN) : Added Wake on Lan for bootstrap, compute-nodes & worker-nodes
 
-## okd4-control-plane
+### okd4-control-plane
 
 port: 6443-22623 is used for haproxy
 
-## okd4-compute
+### okd4-compute
 
 port: 6443-22623 is used for haproxy
 
-## Cases
+### Cases
 - Operator hub only showing community-operators --&gt; In Cluster's OperatorHub, changed disabled default sources to false
 - Gracefully shutdown ckuster: https://docs.openshift.com/container-platform/4.8/backup_and_restore/graceful-cluster-shutdown.html
 
-### Powering Up
+#### Powering Up
 okd4-pfsense --> okd4-services --> okd4-control-plane --> okd4-compute
 
-### Powering Off
+#### Powering Off
 okd4-compute --> okd4-control-plane --> okd4-services --> okd4-pfsense
 
 
 Section4: References
 
 
-# acknowledgment
-## Contributors
+## acknowledgment
+### Contributors
 
 APA 🖖🏻
 
-## Links
+### Links
 - Installing a cluster on vSphere with user-provisioned infrastructure - OpenShift Documebtation: https://docs.openshift.com/container-platform/4.8/installing/installing_vsphere/installing-vsphere.html
 ---
 - Install OpenShift 4 on Bare Metal - UPI - GitHub: https://github.com/ryanhay/ocp4-metal-install
@@ -529,7 +523,7 @@ APA 🖖🏻
 ---
 - https://cloud.redhat.com/blog/provisioning-devops-on-openshift-using-helm-in-5-steps-from-zero-to-hero
 
-## © APA, 2022-2024
+### © APA, 2022-2024
 
 ```                                                                                                       
   aaaaaaaaaaaaa  ppppp   ppppppppp     aaaaaaaaaaaaa   
