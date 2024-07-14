@@ -531,7 +531,9 @@ APA 🖖🏻
 - OC monitoring: https://docs.openshift.com/container-platform/4.9/monitoring/monitoring-overview.html
 ---
 - https://cloud.redhat.com/blog/provisioning-devops-on-openshift-using-helm-in-5-steps-from-zero-to-hero
----
+
+## © APA, 2022-2024
+
 ```                                                                                                       
   aaaaaaaaaaaaa  ppppp   ppppppppp     aaaaaaaaaaaaa   
   a::::::::::::a p::::ppp:::::::::p    a::::::::::::a  
