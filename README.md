@@ -19,7 +19,7 @@
   - Minimum resource requirements
   - Producing an ignition config
   - Commands
-  - Cases
+  
 - Section2: Setting up an OKD 4.5 Cluster
 
 - Section3: Implementation
@@ -29,6 +29,7 @@
   - okd4-pfsense
   - okd4-control-plane
   - okd4-compute
+  - Cases
 - Section4: References
 
 # Section1: Theoretical
@@ -272,17 +273,6 @@ Some Good Resources
 - oc scale deploy &lt;deployment_name&gt; -n &lt;namespace&gt; --replicas &lt;number_of_replicas&gt; --&gt; change number of replicas
 
 
-## Cases
-- Operator hub only showing community-operators --&gt; In Cluster's OperatorHub, changed disabled default sources to false
-- Gracefully shutdown ckuster: https://docs.openshift.com/container-platform/4.8/backup_and_restore/graceful-cluster-shutdown.html>
-
-### Powering Up
-okd4-pfsense --> okd4-services --> okd4-control-plane --> okd4-compute
-
-### Powering Off
-okd4-compute --> okd4-control-plane --> okd4-services --> okd4-pfsense
-
-
 
 # Section2: Setting up an OKD 4.5 Cluster
 
@@ -302,7 +292,7 @@ Cluster consists of:
 | okd4-compute-1 | ISO: fedora-coreos-39.20231101.3.0-live.x86_64.iso - RAW: fedora-coreos-39.20231101.3.0-metal.x86_64.raw.xz | 00:0c:29:39:19:c1 - 192.168.1.204 | CPU: 8 - Memory: 18 - HDD: 140 GB - Network: OKD |
 | okd4-compute-2 | ISO: fedora-coreos-39.20231101.3.0-live.x86_64.iso - RAW: fedora-coreos-39.20231101.3.0-metal.x86_64.raw.xz | 00:0c:29:54:8c:a7 - 192.168.1.205 | CPU: 8 - Memory: 18 - HDD: 140 GB - Network: OKD |
 
-
+- NOTE: In this guide, I used VMWare ESXi as the hypervisor
 
 
 # Section3: Implementation
@@ -508,6 +498,17 @@ port: 6443-22623 is used for haproxy
 ## okd4-compute
 
 port: 6443-22623 is used for haproxy
+
+## Cases
+- Operator hub only showing community-operators --&gt; In Cluster's OperatorHub, changed disabled default sources to false
+- Gracefully shutdown ckuster: https://docs.openshift.com/container-platform/4.8/backup_and_restore/graceful-cluster-shutdown.html
+
+### Powering Up
+okd4-pfsense --> okd4-services --> okd4-control-plane --> okd4-compute
+
+### Powering Off
+okd4-compute --> okd4-control-plane --> okd4-services --> okd4-pfsense
+
 
 Section4: References
 
