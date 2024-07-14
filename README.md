@@ -197,7 +197,7 @@ $ butane --pretty --strict config.yaml > config.ign
 
 ### Networking
 
-https://docs.fedoraproject.org/en-US/fedora-coreos/sysconfig-network-configuration/
+- https://docs.fedoraproject.org/en-US/fedora-coreos/sysconfig-network-configuration/
 
 🟥 IMPORTANT: Do not forget to add --copy-network argument 🟥
 
