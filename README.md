@@ -340,7 +340,7 @@ $ oc get routes --all-namespaces | grep -i console-openshift
 
 - Default StorageClass : nfs-client
 
-**Used this two resources:** https://www.youtube.com/watch?v=6DmEp0kXUOI> **+ NFS Subdir External Provisioner:** https://github.com/kubernetes-sigs/nfs-subdir-external-provisioner>
+- **Used this two resources:** https://www.youtube.com/watch?v=6DmEp0kXUOI> **+ NFS Subdir External Provisioner:** https://github.com/kubernetes-sigs/nfs-subdir-external-provisioner>
 
 IMPORTANT: When we delete a PV, it will not remain on nfs server
 
