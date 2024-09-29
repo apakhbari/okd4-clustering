@@ -21,7 +21,6 @@
   - Commands
 
 - Section2: Setting up an OKD 4.5 Cluster
-- 
 
 - Section3: Implementation
   - Schema
