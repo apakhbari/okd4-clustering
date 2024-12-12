@@ -301,7 +301,17 @@ generating the configs, and they should be removed before you use the same folde
 sudo mkdir /var/www/html/okd4
 ```
 
-- dir contents to /var/www/html/okd4 and set permissions:
+- Copy the install_dir contents to /var/www/html/okd4 and set permissions:
+```
+sudo cp -R install_dir/* /var/www/html/okd4/
+sudo chown -R apache: /var/www/html/
+sudo chmod -R 755 /var/www/html/
+```
+
+- Test the webserver:
+```
+
+```
 
 ## 4- Acknowledgment
 ### Contributors
