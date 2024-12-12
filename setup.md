@@ -10,6 +10,12 @@
                                                                            |___/ 
 ```
 
+### TO EDIT
+- ALERT
+- (HERE)
+- vlan
+- ip
+
 ## Table of contents:
 
 1. Schema
@@ -282,8 +288,20 @@ install_dir/manifests/cluster-scheduler-02-config.yml
 ```
 
 - Now you can create the ignition-configs:
+```
+openshift-install create ignition-configs --dir=install_dir/
+```
+- ALERT (HERE) Note: If you reuse the install_dir, make sure it is empty. Hidden files are created after
+generating the configs, and they should be removed before you use the same folder on a
+2nd attempt.
 
+### Host ignition and Fedora CoreOS files on the webserver:
+- Create okd4 directory in /var/www/html:
+```
+sudo mkdir /var/www/html/okd4
+```
 
+- dir contents to /var/www/html/okd4 and set permissions:
 
 ## 4- Acknowledgment
 ### Contributors
