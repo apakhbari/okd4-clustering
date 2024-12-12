@@ -85,6 +85,9 @@ sudo dnf install -y ~/Downloads/google-chrome-stable_current_x86_64.rpm git
 ### Setup the okd4-pfsense VM:
 - Power on your pfSense VM and run through the installation using all the default values.
 - Login to pfSense via your web-browser on the okd4-services VM. The default username is “admin” and the password is “pfsense”.
+- After logging in, click next and use “okd4-pfsense” for hostname and “okd.local” for the domain and add 192.168.1.210 as the Primary DNS server.
+- Use Defaults for WAN Configuration. Uncheck “Block RFC1918 Private Networks” since your home network is the “WAN” in this setup. Next.
+- Use the default LAN IP and subnet mask. Set an admin password on the next screen.
 - 
 
 
