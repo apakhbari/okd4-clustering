@@ -15,6 +15,7 @@
 - (HERE)
 - vlan
 - ip
+- 32.20
 
 ## Table of contents:
 
@@ -317,29 +318,11 @@ curl localhost:8080/okd4/metadata.json
 names:
 ```
 cd /var/www/html/okd4/
-sudo wget
-https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/32
-.20200629.3.0/x86
-64/fedora-coreos-32.20200629.3.0-
-_
-metal.x86
-64.raw.xz
-_
-sudo wget
-https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/32
-.20200629.3.0/x86
-64/fedora-coreos-32.20200629.3.0-
-_
-metal.x86
-64.raw.xz.sig
-_
-sudo mv fedora-coreos-32.20200629.3.0-metal.x86
-_
-sudo mv fedora-coreos-32.20200629.3.0-metal.x86
-64.raw.xz fcos.raw.xz
-64.raw.xz.sig
-_
-fcos.raw.xz.sig
+sudo wget https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/32.20200629.3.0/x86_64/fedora-coreos-32.20200629.3.0-metal.x86_64.raw.xz
+sudo wget https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/32.20200629.3.0/x86_64/fedora-coreos-32.20200629.3.0-metal.x86_64.raw.xz.sig
+
+sudo mv fedora-coreos-32.20200629.3.0-metal.x86_64.raw.xz fcos.raw.xz.sig fcos.raw.xz
+sudo mv fedora-coreos-32.20200629.3.0-metal.x86_64.raw.xz.sig fcos.raw.xz.sig fcos.raw.xz.sig
 sudo chown -R apache: /var/www/html/
 sudo chmod -R 755 /var/www/html/
 ```
