@@ -13,7 +13,7 @@
 ## Table of contents:
 
 1. Schema
-2. Implementation
+2. Implementing prerequisites
 3.  
 4. Acknowledgment
 
@@ -36,7 +36,7 @@
 ### Network Schema
 (HERE)
 
-## 2- Implementation
+## 2- Implementing prerequisites
 - NOTE: In this guide, I used VMWare ESXi as the hypervisor (HERE) (USE ALERT md)
 ### Create a new network in VMWare for OKD
 - Login to your VMWare Host. Select Networking → Port Groups → Add port group. Setup an OKD network on an unused VLAN, in my instance, VLAN 20.
