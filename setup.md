@@ -414,7 +414,19 @@ cat install_dir/auth/kubeadmin-password
 ### Persistent Storage:
 - We need to create some persistent storage for our registry before we can complete this project. Let’s configure our okd4-services VM as an NFS server and use it for persistent
 storage.
+- Login to your okd4-services VM and begin to set up an NFS server. The following commands install the necessary packages, enable services, and configure file and folder permissions.
+```
+sudo dnf install -y nfs-utils
+sudo systemctl enable nfs-server rpcbind
+sudo systemctl start nfs-server rpcbind
+sudo mkdir -p /var/nfsshare/registry
+sudo chmod -R 777 /var/nfsshare
+sudo chown -R nobody:nobody /var/nfsshare
+```
 
+#### Create an NFS Export
+- Add this line in the new /etc/exports file “/var/nfsshare
+192.168.1.0/24(rw,sync,no_root_squash,no_all_squash,no_wdelay)"
 
 
 
