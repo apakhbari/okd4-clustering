@@ -1,4 +1,4 @@
-# OKD4 Clustering Setup
+# OKD4.5 Clustering Setup
 ```
    ____  _  _______  _  _           _____ _           _            _             
   / __ \| |/ /  __ \| || |         / ____| |         | |          (_)            
@@ -38,6 +38,13 @@
 ## 2- Implementation
 ### Create a new network in VMWare for OKD
 - Login to your VMWare Host. Select Networking → Port Groups → Add port group. Setup an OKD network on an unused VLAN, in my instance, VLAN 20.
+- Name your Group and set your VLAN ID.
+
+### Create the okd4-services VM:
+- Download the Fedora Workstation 39 and upload it to your ESXi host datastore.
+- Create a new Virtual Machine. Choose Guest OS as Linux and Select Fedora Workstation 39 (64-bit).
+- Select the Datastore and customize the settings to 4 vCPU, 4GB RAM, 100GB HD. Add a
+2nd network adapter to the OKD network. Attached the CentOS ISO.
 
 ## 4- Acknowledgment
 ### Contributors
