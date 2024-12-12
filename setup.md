@@ -14,7 +14,7 @@
 
 1. Schema
 2. Implementing prerequisites
-3.  
+3. Implementing OKD 4.5 Cluster
 4. Acknowledgment
 
 ## 1- Schema
@@ -214,7 +214,7 @@ sudo sed -i 's/Listen 80/Listen 8080/' /etc/httpd/conf/httpd.conf
 - Congrats! You should now have a separate home lab environment setup and ready for ODK. Now we can start the install.
 
 
-## 3- Implementing OKD 4.5 Clustera
+## 3- Implementing OKD 4.5 Cluster
 
 ## 4- Acknowledgment
 ### Contributors
