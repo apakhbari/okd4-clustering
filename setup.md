@@ -94,6 +94,47 @@ sudo dnf install -y ~/Downloads/google-chrome-stable_current_x86_64.rpm git
 - The latest stable version at the time of writing is fedora-coreos-39.20231101.3.0 (HERE) (ALERT md)
 - Create the six ODK nodes (bootstrap, master, worker) on your ESXi host.
 
+### Setup DHCP reservations:
+- Compile a list of the OKD nodes MAC addresses by viewing the hardware configuration
+of your VMs.
+- Login into pfSense. Go to Services → DHCP Server and change your ending range IP to
+192.168.1.99, and set the primary DNS server as 192.168.1.210, then click Save.
+- On the DHCP Server, page click Add at the bottom.
+- Fill in the MAC Address, IP Address, and Hostname, then click save. Do this for each
+ODK VM. Also, include the okd4-services MAC on the OKD network while you are at it.
+Click Apply Changes at the top of the page when complete.
+
+### Configure okd4-services VM to host various services:
+- The okd4-services VM is used to provide DNS, NFS exports, web server, and load
+balancing.
+- Copy the MAC address on the VM Hardware configuration page for the NIC connected to
+the OKD network and set up a DHCP Reservation for this VM using the IP address
+192.168.1.210.
+- Hit “Apply Changes” at the top of the DHCP page when completed.
+- Open a terminal on the okd4-services VM and clone the clustering repo that contains
+the DNS, HAProxy, and install-conf.yaml example files:
+``` (HERE)
+cd
+git clone https://github.com/apakhbari/okd4-clustering.git
+cd okd4_files
+```
+
+### Install bind (DNS)
+```
+sudo dnf -y install bind bind-utils
+```
+
+- Copy the named config files and zones:
+```
+sudo cp named.conf /etc/named.conf
+sudo cp named.conf.local /etc/named/
+sudo mkdir /etc/named/zones
+sudo cp db* /etc/named/zones
+```
+
+
+
+
 
 
 ## 4- Acknowledgment
