@@ -53,6 +53,22 @@
 - For Software Selection, use Server with GUI and add the Guest Agents.
 - Enable the NIC connected to the VM Network and set the hostname as okd4-services,
 then click Apply and Done.
+- Click “Begin Installation” to start the install.
+- Set the Root password, and create an admin user.
+- After the installation has completed, login, and update the OS.
+``` (HERE)
+sudo dnf install -y epel-release
+sudo dnf update -y
+sudo systemctl restart
+```
+
+- Setup XRDP for Remote Access from Home Network
+``` (HERE)
+sudo dnf install -y xrdp tigervnc-server
+sudo systemctl enable --now xrxp
+sudo firewall-cmd --zone=public --permanent --add-port=3389/tcp
+sudo firewall-cmd --reload
+```
 
 ## 4- Acknowledgment
 ### Contributors
