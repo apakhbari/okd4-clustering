@@ -185,6 +185,15 @@ sudo firewall-cmd --permanent --add-service=https
 sudo firewall-cmd --reload
 ```
 
+- Enable and Start httpd service/Allow port 8080 on the firewall:
+```
+sudo setsebool -P httpd_read_user_content 1
+sudo systemctl enable httpd
+sudo systemctl start httpd
+sudo firewall-cmd --permanent --add-port=8080/tcp
+sudo firewall-cmd --reload
+```
+
 ### Install Apache/HTTPD
 ```
 sudo dnf install -y httpd
