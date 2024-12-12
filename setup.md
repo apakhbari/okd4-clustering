@@ -310,8 +310,11 @@ sudo chmod -R 755 /var/www/html/
 
 - Test the webserver:
 ```
-
+curl localhost:8080/okd4/metadata.json
 ```
+
+- Download the Fedora CoreOS bare-metal bios image and sig files and shorten the file
+names:
 
 ## 4- Acknowledgment
 ### Contributors
