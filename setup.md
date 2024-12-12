@@ -473,6 +473,28 @@ oc get pv
 du -sh /var/nfsshare/registry
 ```
 
+### HTPasswd Setup:
+- The kubeadmin is a temporary user. The easiest way to set up a local user is with htpasswd.
+```
+cd
+cd okd4_files
+htpasswd -c -B -b users.htpasswd testuser testpassword
+```
+
+- Create a secret in the openshift-config project using the users.htpasswd file you generated:
+```
+oc create secret generic htpass-secret --from-file=htpasswd=users.htpasswd -n openshift-config
+```
+
+- Add the identity provider.
+```
+oc apply -f htpasswd_provider.yaml
+```
+
+
+
+
+
 ## 4- Acknowledgment
 ### Contributors
 
