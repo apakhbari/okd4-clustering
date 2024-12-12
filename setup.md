@@ -190,7 +190,10 @@ sudo firewall-cmd --reload
 sudo dnf install -y httpd
 ```
 
-- 
+- Change httpd to listen port to 8080:
+```
+sudo sed -i 's/Listen 80/Listen 8080/' /etc/httpd/conf/httpd.conf
+```
 
 
 ## 4- Acknowledgment
