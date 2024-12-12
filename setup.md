@@ -194,6 +194,13 @@ sudo firewall-cmd --permanent --add-port=8080/tcp
 sudo firewall-cmd --reload
 ```
 
+- Test the webserver:
+```
+curl localhost:8080
+```
+
+
+
 ### Install Apache/HTTPD
 ```
 sudo dnf install -y httpd
