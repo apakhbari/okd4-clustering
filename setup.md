@@ -427,6 +427,11 @@ sudo chown -R nobody:nobody /var/nfsshare
 #### Create an NFS Export
 - Add this line in the new /etc/exports file “/var/nfsshare
 192.168.1.0/24(rw,sync,no_root_squash,no_all_squash,no_wdelay)"
+```
+echo '/var/nfsshare
+192.168.1.0/24(rw,sync,_root_squash,no_all_squash,no_wdelay)' |
+sudo tee /etc/exports
+```
 
 
 
