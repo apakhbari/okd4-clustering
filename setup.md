@@ -200,7 +200,6 @@ curl localhost:8080
 ```
 
 
-
 ### Install Apache/HTTPD
 ```
 sudo dnf install -y httpd
@@ -211,6 +210,11 @@ sudo dnf install -y httpd
 sudo sed -i 's/Listen 80/Listen 8080/' /etc/httpd/conf/httpd.conf
 ```
 
+- Congratulations, You Are Half Way There!
+- Congrats! You should now have a separate home lab environment setup and ready for ODK. Now we can start the install.
+
+
+## 3- Implementing OKD 4.5 Clustera
 
 ## 4- Acknowledgment
 ### Contributors
