@@ -315,6 +315,36 @@ curl localhost:8080/okd4/metadata.json
 
 - Download the Fedora CoreOS bare-metal bios image and sig files and shorten the file
 names:
+```
+cd /var/www/html/okd4/
+sudo wget
+https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/32
+.20200629.3.0/x86
+64/fedora-coreos-32.20200629.3.0-
+_
+metal.x86
+64.raw.xz
+_
+sudo wget
+https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/32
+.20200629.3.0/x86
+64/fedora-coreos-32.20200629.3.0-
+_
+metal.x86
+64.raw.xz.sig
+_
+sudo mv fedora-coreos-32.20200629.3.0-metal.x86
+_
+sudo mv fedora-coreos-32.20200629.3.0-metal.x86
+64.raw.xz fcos.raw.xz
+64.raw.xz.sig
+_
+fcos.raw.xz.sig
+sudo chown -R apache: /var/www/html/
+sudo chmod -R 755 /var/www/html/
+```
+
+### Starting the bootstrap node:
 
 ## 4- Acknowledgment
 ### Contributors
