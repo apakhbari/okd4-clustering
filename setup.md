@@ -450,9 +450,10 @@ oc create -f okd4_files/registry_pv.yaml
 oc get pv
 ```
 
-
-
-
+- Edit the image-registry operator:
+```
+oc edit configs.imageregistry.operator.openshift.io
+```
 
 
 
