@@ -88,8 +88,10 @@ sudo dnf install -y ~/Downloads/google-chrome-stable_current_x86_64.rpm git
 - After logging in, click next and use “okd4-pfsense” for hostname and “okd.local” for the domain and add 192.168.1.210 as the Primary DNS server.
 - Use Defaults for WAN Configuration. Uncheck “Block RFC1918 Private Networks” since your home network is the “WAN” in this setup. Next.
 - Use the default LAN IP and subnet mask. Set an admin password on the next screen.
-- 
 
+### Create bootstrap, master, and worker nodes:
+- Download the Fedora CoreOS Bare Metal ISO and upload it to your ESXi datastore.
+- The latest stable version at the time of writing is fedora-coreos-39.20231101.3.0 (HERE) (ALERT md)
 
 ## 4- Acknowledgment
 ### Contributors
