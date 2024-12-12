@@ -491,8 +491,14 @@ oc create secret generic htpass-secret --from-file=htpasswd=users.htpasswd -n op
 oc apply -f htpasswd_provider.yaml
 ```
 
+- Logout of the OpenShift Console. Then select htpasswd_provider and login with testuser and testpassword credentials.
+- If you visit the Administrator page you should see no projects:
+- Give yourself cluster-admin access, and the projects should immediately populate:
+```
+oc adm policy add-cluster-role-to-user cluster-admin testuser
+```
 
-
+- Your user should now have cluster-admin level access.
 
 
 ## 4- Acknowledgment
