@@ -279,7 +279,7 @@ Some Good Resources
 
 ### Schema
 
-Cluster consists of:
+- VM Overview:
 
 | Machine | OS | IP + MAC Address | Resources |
 | --- | --- | --- | --- |

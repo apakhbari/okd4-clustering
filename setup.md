@@ -12,42 +12,39 @@
 
 ## Table of contents:
 
+1. Schema
+2. Implementation
+3.  
+4. Acknowledgment
 
-- Section1: Theoretical
-  - Tips & Tricks
-  - OpenShift Components
-  - Minimum resource requirements
-  - Producing an ignition config
-  - Commands
+## 1- Schema
 
-- Section2: Setting up an OKD 4.5 Cluster
+### VM Schema
 
-- Section3: Implementation
-  - Schema
-  - Cluster
-  - okd4-services
-  - okd4-pfsense
-  - okd4-control-plane
-  - okd4-compute
-  - Cases
-- Section4: acknowledgment
+| Machine | OS | IP + MAC Address | Resources |
+| --- | --- | --- | --- |
+| okd4-services (DNS/LB/WEB/NFS) \[Helper Node\] | Fedora Workstation 39 | eth1: LAN: 00:0c:29:8a:0b:32 - LAN: 192.168.1.210 / eth2: WAN: 00:0c:29:8a:0b:28 - WAN: 192.168.2.60 | CPU: 8 - Memory: 8 - HDD: 140 GB - Network: OKD(LAN) + VM(WAN) |
+| okd4-bootstrap (BootStrap Node) | ISO: fedora-coreos-39.20231101.3.0-live.x86_64.iso - RAW: fedora-coreos-39.20231101.3.0-metal.x86_64.raw.xz | 00:0c:29:2a:73:13 - 192.168.1.200 | CPU: 8 - Memory: 18 - HDD: 140 GB - Network: OKD |
+| okd4-pfsense (FireWall - Router - DHCP) | FreeBSD | eth1: LAN: 00:0c:29:2c:d5:43 - LAN: 192.168.1.1 / eth2: WAN: 00:0c:29:2c:d5:39 - WAN: 192.168.2.135 | CPU: 2 - Memory: 4 - HDD: 25 GB - Network: OKD(LAN) + VM(WAN) |
+| okd4-control-plane-1 | ISO: fedora-coreos-39.20231101.3.0-live.x86_64.iso - RAW: fedora-coreos-39.20231101.3.0-metal.x86_64.raw.xz | 00:0c:29:9a:77:53 - 192.168.1.201 | CPU: 8 - Memory: 18 - HDD: 140 GB - Network: OKD |
+| okd4-control-plane-2 | ISO: fedora-coreos-39.20231101.3.0-live.x86_64.iso - RAW: fedora-coreos-39.20231101.3.0-metal.x86_64.raw.xz | 00:0c:29:53:5d:97 - 192.168.1.202 | CPU: 8 - Memory: 18 - HDD: 140 GB - Network: OKD |
+| okd4-control-plane-3 | ISO: fedora-coreos-39.20231101.3.0-live.x86_64.iso - RAW: fedora-coreos-39.20231101.3.0-metal.x86_64.raw.xz | 00:0c:29:89:be:d5 - 192.168.1.203 | CPU: 8 - Memory: 18 - HDD: 140 GB - Network: OKD |
+| okd4-compute-1 | ISO: fedora-coreos-39.20231101.3.0-live.x86_64.iso - RAW: fedora-coreos-39.20231101.3.0-metal.x86_64.raw.xz | 00:0c:29:39:19:c1 - 192.168.1.204 | CPU: 8 - Memory: 18 - HDD: 140 GB - Network: OKD |
+| okd4-compute-2 | ISO: fedora-coreos-39.20231101.3.0-live.x86_64.iso - RAW: fedora-coreos-39.20231101.3.0-metal.x86_64.raw.xz | 00:0c:29:54:8c:a7 - 192.168.1.205 | CPU: 8 - Memory: 18 - HDD: 140 GB - Network: OKD |
 
 
-## 4: acknowledgment
+### Network Schema
+
+## 2- Implementation
+### Create a new network in VMWare for OKD
+- Login to your VMWare Host. Select Networking → Port Groups → Add port group. Setup an OKD network on an unused VLAN, in my instance, VLAN 20.
+
+## 4- Acknowledgment
 ### Contributors
 
 APA 🖖🏻
 
 ### Links
-- Installing a cluster on vSphere with user-provisioned infrastructure - OpenShift Documebtation: https://docs.openshift.com/container-platform/4.8/installing/installing_vsphere/installing-vsphere.html
----
-- Install OpenShift 4 on Bare Metal - UPI - GitHub: https://github.com/ryanhay/ocp4-metal-install
-- Guide: Installing an OKD 4.5 Cluster - Medium: https://medium.com/@craig_robinson/guide-installing-an-okd-4-5-cluster-508a2631cbee
-- Guide: Installing an OKD 4.5 Cluster - Medium: [Guide: OKD 4.5 Single Node Cluster | by Craig Robinson | The Startup | Medium](https://medium.com/swlh/guide-okd-4-5-single-node-cluster-832693cb752b)
----
-- OC monitoring: https://docs.openshift.com/container-platform/4.9/monitoring/monitoring-overview.html
----
-- https://cloud.redhat.com/blog/provisioning-devops-on-openshift-using-helm-in-5-steps-from-zero-to-hero
 
 ### © APA, 2022-2024
 
