@@ -443,6 +443,18 @@ sudo firewall-cmd --permanent --zone=public --add-service nfs
 sudo firewall-cmd --reload
 ```
 
+### Registry configuration:
+- Create a persistent volume on the NFS share. Use the registry_py.yaml in okd4_folder from the git repo:
+```
+oc create -f okd4_files/registry_pv.yaml
+oc get pv
+```
+
+
+
+
+
+
 
 ## 4- Acknowledgment
 ### Contributors
