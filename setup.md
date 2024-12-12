@@ -368,6 +368,55 @@ openshift-install --dir=install_dir/ wait-for bootstrap-complete --log-level=inf
 
 - Once the bootstrap process is complete, which can take upwards of 30 minutes, you can shutdown your bootstrap node. Now is a good time to edit the
 /etc/haproxy/haproxy.cfg, comment out the bootstrap node, and reload the haproxy service.
+```
+sudo sed '/ okd4-bootstrap /s/^/#/' /etc/haproxy/haproxy.cfg
+sudo systemctl reload haproxy
+```
+
+### Login to the cluster and approve CSRs:
+- Now that the masters are online, you should be able to login with the oc client. Use the following commands to log in and check the status of your cluster:
+```
+export KUBECONFIG=~/install_dir/auth/kubeconfig
+oc whoami
+oc get nodes
+oc get csr
+```
+
+- You should only see the master nodes and several CSR’s waiting for approval. Install the jq package to assist with approving multiple CSR’s at once time.
+```
+wget -O jq https://github.com/stedolan/jq/releases/download/jq-
+1.6/jq-linux64
+chmod +x jq
+sudo mv jq /usr/local/bin/
+jq --version
+```
+
+- Approve all the pending certs and check your nodes:
+```
+oc get csr -ojson | jq -r '.items[] | select(.status == {} ) | .metadata.name' | xargs oc adm certificate approve
+```
+
+- Check the status of the cluster operators.
+```
+oc get clusteroperators
+```
+
+- The console has just become available in my picture above. Get your kubeadmin
+password from the install_dir/auth folder and login to the web console:
+```
+cat install_dir/auth/kubeadmin-password
+```
+
+- Open your web browser to https://console-openshift-console.apps.lab.okd.local/ and login as kubeadmin with the password from above.
+- The cluster status may still say upgrading, and it continues to finish the installation.
+
+
+### Persistent Storage:
+- We need to create some persistent storage for our registry before we can complete this project. Let’s configure our okd4-services VM as an NFS server and use it for persistent
+storage.
+
+
+
 
 ## 4- Acknowledgment
 ### Contributors
