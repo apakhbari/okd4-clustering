@@ -335,11 +335,17 @@ coreos.inst.image_url=http://192.168.1.210:8080/okd4/fcos.raw.xz
 coreos.inst.ignition_url=http://192.168.1.210:8080/okd4/bootstrap.ign
 ```
 
-- You should see that the fcos.raw.gz image and signature are downloading
+- You should see that the fcos.raw.gz image and signature are downloading.
 
 ### Starting the control plane nodes:
 - Power on the control-plane nodes and press the TAB key to edit the kernel boot options and add the following, then press enter:
+```
+coreos.inst.install_dev=/dev/sda
+coreos.inst.image_url=http://192.168.1.210:8080/okd4/fcos.raw.xz
+coreos.inst.ignition_url=http://192.168.1.210:8080/okd4/master.ign
+```
 
+- You should see that the fcos.raw.gz image and signature are downloading.
 
 
 
