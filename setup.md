@@ -92,6 +92,9 @@ sudo dnf install -y ~/Downloads/google-chrome-stable_current_x86_64.rpm git
 ### Create bootstrap, master, and worker nodes:
 - Download the Fedora CoreOS Bare Metal ISO and upload it to your ESXi datastore.
 - The latest stable version at the time of writing is fedora-coreos-39.20231101.3.0 (HERE) (ALERT md)
+- Create the six ODK nodes (bootstrap, master, worker) on your ESXi host.
+
+
 
 ## 4- Acknowledgment
 ### Contributors
