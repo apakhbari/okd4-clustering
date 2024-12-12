@@ -78,6 +78,15 @@ sudo dnf install -y ~/Downloads/google-chrome-stable_current_x86_64.rpm git
 
 ### Create the okd4-pfsense VM:
 - Download the pfSense ISO and upload it to your ESXi host’s datastore.
+- Create a new Virtual Machine. Choose Guest OS as Other and Select FreeBSD 64-bit.
+- Use the default template settings for resources.
+- Select your home network for Network Adapter 1, and add a new network adapter using the OKD network.
+
+### Setup the okd4-pfsense VM:
+- Power on your pfSense VM and run through the installation using all the default values.
+- Login to pfSense via your web-browser on the okd4-services VM. The default username is “admin” and the password is “pfsense”.
+- 
+
 
 ## 4- Acknowledgment
 ### Contributors
