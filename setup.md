@@ -455,7 +455,23 @@ oc get pv
 oc edit configs.imageregistry.operator.openshift.io
 ```
 
+- Change the managementState: from Removed to Managed. Under storage: add the pvc: and claim: blank to attach the PV and save your changes automatically:
+```
+managementState: Managed
+storage:
+    pvc:
+        claim:
+```
 
+- Check your persistent volume, and it should now be claimed:
+```
+oc get pv
+```
+
+- Check the export size, and it should be zero. In the next section, we will push to the registry, and the file size should not be zero.
+```
+du -sh /var/nfsshare/registry
+```
 
 ## 4- Acknowledgment
 ### Contributors
