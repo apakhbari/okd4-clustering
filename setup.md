@@ -253,6 +253,27 @@ openshift-install version
 ssh-keygen
 ```
 
+- Create an install directory and copy the install-config.yaml file:
+```
+cd
+mkdir install_dir
+cp okd4_files/install-config.yaml ./install_dir
+```
+
+- Edit the install-config.yaml in the install_dir, insert your pull secret and ssh key, and
+backup the install-config.yaml as it will be deleted in the next step:
+- (HERE) ALERT: backup the install-config.yaml
+```
+vim ./install_dir/install-config.yaml
+cp ./install_dir/install-config.yaml ./install_dir/install-config.yaml.bak
+```
+
+- Generate the Kubernetes manifests for the cluster, ignore the warning:
+```
+openshift-install create manifests --dir=install
+_dir/
+```
+
 
 
 
