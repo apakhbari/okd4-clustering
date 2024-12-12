@@ -433,6 +433,15 @@ echo '/var/nfsshare
 sudo tee /etc/exports
 ```
 
+- Restart the nfs-server service and add firewall rules:
+```
+sudo setsebool -P nfs_export_all_rw 1
+sudo systemctl restart nfs-server
+sudo firewall-cmd --permanent --zone=public --add-service mountd
+sudo firewall-cmd --permanent --zone=public --add-service rpc-bind
+sudo firewall-cmd --permanent --zone=public --add-service nfs
+sudo firewall-cmd --reload
+```
 
 
 ## 4- Acknowledgment
