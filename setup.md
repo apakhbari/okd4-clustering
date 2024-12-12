@@ -274,7 +274,14 @@ openshift-install create manifests --dir=install
 _dir/
 ```
 
+- Modify the cluster-scheduler-02-config.yaml manifest file to prevent Pods from being
+scheduled on the control plane machines:
+```
+sed -i 's/mastersSchedulable: true/mastersSchedulable: False/'
+install_dir/manifests/cluster-scheduler-02-config.yml
+```
 
+- Now you can create the ignition-configs:
 
 
 
