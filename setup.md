@@ -37,6 +37,7 @@
 (HERE)
 
 ## 2- Implementation
+- NOTE: In this guide, I used VMWare ESXi as the hypervisor (HERE) (USE ALERT md)
 ### Create a new network in VMWare for OKD
 - Login to your VMWare Host. Select Networking → Port Groups → Add port group. Setup an OKD network on an unused VLAN, in my instance, VLAN 20.
 - Name your Group and set your VLAN ID.
@@ -69,6 +70,14 @@ sudo systemctl enable --now xrxp
 sudo firewall-cmd --zone=public --permanent --add-port=3389/tcp
 sudo firewall-cmd --reload
 ```
+
+- Download Google Chrome rpm and install along with git
+``` (HERE)
+sudo dnf install -y ~/Downloads/google-chrome-stable_current_x86_64.rpm git
+```
+
+### Create the okd4-pfsense VM:
+- Download the pfSense ISO and upload it to your ESXi host’s datastore.
 
 ## 4- Acknowledgment
 ### Contributors
