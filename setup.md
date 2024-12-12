@@ -215,6 +215,47 @@ sudo sed -i 's/Listen 80/Listen 8080/' /etc/httpd/conf/httpd.conf
 
 
 ## 3- Implementing OKD 4.5 Cluster
+### Download the openshift-installer and oc client:
+- SSH to the okd4-services VM
+- To download the latest oc client and openshift-install binaries, you need to use an
+existing version of the oc client.
+- Download the 4.5 version of the oc client and openshift-install from the OKD releases
+page. Example:
+```
+wget https://github.com/openshift/okd/releases/download/4.5.0-0.okd-
+2020-07-14-153706-ga/openshift-client-linux-4.5.0-0.okd-2020-07-14-
+153706-ga.tar.gz
+wget https://github.com/openshift/okd/releases/download/4.5.0-0.okd-
+2020-07-14-153706-ga/openshift-install-linux-4.5.0-0.okd-2020-07-14-
+153706-ga.tar.gz
+```
+
+- Extract the okd version of the oc client and openshift-install:
+```
+tar -zxvf openshift-client-linux-4.5.0-0.okd-2020-07-14-153706-ga.tar.gz
+tar -zxvf openshift-install-linux-4.5.0-0.okd-2020-07-14-153706-ga.tar.gz
+```
+
+- Move the kubectl, oc, and openshift-install to /usr/local/bin and show the version:
+```
+sudo mv kubectl oc openshift-install /usr/local/bin/
+oc version
+openshift-install version
+```
+
+- The latest and recent releases are available at https://origin-release.svc.ci.openshift.org
+
+### Setup the openshift-installer:
+- In the install-config.yaml, you can either use a pull-secret from RedHat or the default of
+“{“auths”:{“fake”:{“auth”: “bar”}}}” as the pull-secret.
+- Generate an SSH key if you do not already have one.
+```
+ssh-keygen
+```
+
+
+
+
 
 ## 4- Acknowledgment
 ### Contributors
