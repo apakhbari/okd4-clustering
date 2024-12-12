@@ -34,6 +34,7 @@
 
 
 ### Network Schema
+(HERE)
 
 ## 2- Implementation
 ### Create a new network in VMWare for OKD
@@ -44,7 +45,14 @@
 - Download the Fedora Workstation 39 and upload it to your ESXi host datastore.
 - Create a new Virtual Machine. Choose Guest OS as Linux and Select Fedora Workstation 39 (64-bit).
 - Select the Datastore and customize the settings to 4 vCPU, 4GB RAM, 100GB HD. Add a
-2nd network adapter to the OKD network. Attached the CentOS ISO.
+2nd network adapter to the OKD network. Attached the CentOS ISO. (HERE)
+- Review your settings and click Finish.
+
+### Install Fedora Workstation 39 on the okd4-services VM:
+- Run through the CentOS 8 installation.
+- For Software Selection, use Server with GUI and add the Guest Agents.
+- Enable the NIC connected to the VM Network and set the hostname as okd4-services,
+then click Apply and Done.
 
 ## 4- Acknowledgment
 ### Contributors
