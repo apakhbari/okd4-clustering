@@ -132,9 +132,65 @@ sudo mkdir /etc/named/zones
 sudo cp db* /etc/named/zones
 ```
 
+- Enable and start named:
+```
+sudo systemctl enable named
+sudo systemctl start named
+sudo systemctl status named
+```
 
+- Create firewall rules:
+```
+sudo firewall-cmd --permanent --add-port=53/udp
+sudo firewall-cmd --reload
+```
 
+- Change the DNS on the okd4-service NIC that is attached to the VM Network (not OKD)
+to 127.0.0.1.
+- Restart the network services on the okd4-services VM:
+```
+sudo systemctl restart NetworkManager
+```
 
+- Test DNS on the okd4-services.
+```
+dig okd.local
+dig –x 192.168.1.210
+```
+
+### Install HAProxy:
+```
+sudo dnf install haproxy -y
+```
+
+- Copy haproxy config from the git directory:
+```
+sudo cp haproxy.cfg /etc/haproxy/haproxy.cfg
+```
+
+- Start, enable, and verify HA Proxy service:
+```
+sudo setsebool -P haproxy_connect_any 1
+sudo systemctl enable haproxy
+sudo systemctl start haproxy
+sudo systemctl status haproxy
+```
+
+- Add OKD firewall ports:
+```
+sudo firewall-cmd --permanent --add-port=6443/tcp
+sudo firewall-cmd --permanent --add-port=22623/tcp
+sudo firewall-cmd --permanent --add-service=http
+sudo firewall-cmd --permanent --add-service=https
+sudo firewall-cmd --reload
+```
+
+### Install Apache/HTTPD
+```
+sudo dnf install -y httpd
+```
+
+- 
 
 
 ## 4- Acknowledgment
